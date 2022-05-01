@@ -1,9 +1,10 @@
-.container-1, .container-2,.container-3, .container-4{
+.container-1, .container-2,.container-3, .container-4, .container-5{
     border: 1px solid black;
     text-align: center;
     width: 60%;
     margin-left: 20%;
     margin-top: 0;
+    
     
 }
 .flex-box-container-1 {
@@ -22,19 +23,40 @@
     align-items: center;
 
 }
-.io{
-    border: 1px solid black;
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-}
-.flex-box-container-2, .flex-b0x-rps, .flex-box-pick-color{
+.flex-box-container-2, .flex-b0x-rps, .flex-box-pick-color, 
+.flex-blackjack-row-1, .flex-blackjack-row-2, .flex-blackjack-row-3{
     display: flex;
+    flex-direction: row;
+    padding: 10px;
     flex-wrap: wrap;
-    border: 1px solid blue;
+    border: 1px solid black;
     justify-content: space-around;
+}    
+.flex-blackjack-row-1, .flex-blackjack-row-2{
+    background: url('https://t3.ftcdn.net/jpg/04/06/87/08/240_F_406870867_AYHwVBpxHS2rhDqEwB0ndveDJxuD79F7.jpg');
+    color: white;
+}
+.flex-blackjack-row-1 div{
+    border: 1px solid black;
+    height: 350px;
+    flex: 1;
+    text-align: center;
+    
+}
+.flex-blackjack-row-2 button{
+    border: 1px solid black;
+    padding: 10px;
+}
+.flex-blackjack-row-2 div{
+    border: 1px solid black;
+    padding: 10px;
+}
+table, th, td{
+    padding: 5px;
+    border: 1px solid black;
 
 }
+
 .flex-box-container-2 img{
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
     margin: 10px;
