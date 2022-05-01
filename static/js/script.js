@@ -12,3 +12,11 @@ function ageInDays (){
 function reset (){
     document.getElementById('ageInDays').remove();
 }
+//challenge 2
+function generateCat(){
+    var image = document.createElement('img');
+    var div =document.getElementById('flex-box-cat');
+    image.src = "https://www.animatedimages.org/data/media/209/animated-cat-image-0394.gif";
+    div.appendChild(image);
+}
+
