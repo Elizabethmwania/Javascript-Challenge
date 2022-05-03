@@ -138,3 +138,54 @@ function randomColors(){
         all_buttons[i].classList.add(choices[randomNumber]);
     }
 }
+//challenge 5
+let blackjackGame = {
+    'you': {'scoreSpan':'#your-blackjack-result', 'div':'#your-box','score':0},
+    'dealer': {'scoreSpan':'#dealer-blackjack-result', 'div':'#dealer-box','score':0},
+   // 'cards': ['2','3','4','5','6','7','8','9','10','K','J','Q','A'],
+};
+const YOU = blackjackGame['you']
+const DEALER = blackjackGame['dealer']
+const hitSound =new Audio('static/sounds/swish.wav');
+const cards = new Array('static/images/2.png','static/images/3.png','static/images/4.png','static/images/5.png',
+            'static/images/6.png','static/images/7.png','static/images/8.png','static/images/9.png',
+            'static/images/10.png','static/images/K.jpg','static/images/J.jpg','static/images/Q.jpg',
+            'static/images/A.png')
+document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
+
+document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
+
+function blackjackHit(){
+    //let card = randomCard();
+   // console.log(card);
+   let randomCard = Math.floor(Math.random()*13);;
+    showCard(randomCard, YOU);
+}
+
+// function randomCard(){
+//     let randomIndex = Math.floor(Math.random()*13);
+//     return blackjackGame[cards][randomIndex];
+// }
+
+
+function showCard(randomCard, activePlayer){
+    let cardImage = document.createElement('img');
+    cardImage.src = cards[randomCard];
+    //cardImage.setAttribute('style', 'height:30px');
+    document.querySelector(activePlayer['div']).appendChild(cardImage);
+    hitSound.play();
+}
+function blackjackDeal(){
+    let yourImages = document.querySelector('#your-box').querySelectorAll('img');
+    let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
+
+    for (i=0; i<yourImages.length; i++){
+    yourImages[i].remove()
+     }
+
+    for (i=0; i<dealerImages.length; i++){
+    dealerImages[i].remove()
+    }
+     
+}
+
